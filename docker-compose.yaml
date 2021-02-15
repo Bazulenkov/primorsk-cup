@@ -21,7 +21,9 @@ services:
       - ./.env
 
   web:
-    image: bazulenkov/primorsk_web:latest
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
     volumes:
       - static_volume:/code/static/
       - media_volume:/code/media/
@@ -34,4 +36,3 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
-  
