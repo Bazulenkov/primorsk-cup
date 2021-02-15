@@ -13,4 +13,4 @@ musl-dev gcc postgresql-dev jpeg-dev zlib-dev libffi-dev \
 && pip install -r requirements.txt \
 && python3 manage.py collectstatic --noinput
 
-CMD gunicorn foodgram.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn primorsk.wsgi:application --bind 0.0.0.0:8000
