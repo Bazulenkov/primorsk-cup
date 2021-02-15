@@ -50,10 +50,11 @@ POSTGRES_PASSWORD=postgres # пароль для подключения к БД 
 DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД 
 ```
-- Скопируйте на сервер файлы `docker-compose.yaml`, `.env` командами:
+- Скопируйте на сервер файлы `docker-compose.yaml`, `.env`, `Dockerfile-nginx` командами:
 ```
 scp docker-compose.yaml  {user}@{server-ip}:
 scp .env {user}@{server-ip}:
+scp Dockerfile-nginx {user}@{server-ip}:
 
 ```
 - Запустите docker-compose командой `sudo docker-compose up -d` 
