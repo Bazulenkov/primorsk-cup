@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}О соревнованиях{% endblock %}
+{% load static %} 
+{% block css %}{% static 'pages/shopList.css' %}{% endblock %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<main class="main container">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v9.0" nonce="U4KbGzjc"></script>
+    
+    <div class="main__header">
+        <h1 class="main__title">О соревнованиях</h1>
+    </div>
+    <div class="custom-center-block">
+        <p class="custom-text-block">Это будут мега крутые соревы. Понаедут спортсмены со всей России.</p>
+        <p class="custom-text-block">Даты проведения сорвенований такие-то</p>
+        <p>А ты поделился ссылкой в соц сетях на ивент?</p>
+        <div class="fb-share-button" data-href="http://127.0.0.1:8000/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Поделиться</a></div>
+        
+        <h3>Положение</h3>    
+        <p class="custom-text-block">Тест положения на много строк (или можно вставить сслыку на отдельную страницу</p>
+        <div class="custom-text-block">
+            <h3>Место проведения соревнований:</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1969.8846002196562!2d28.575682051976933!3d60.41409878196339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696d73843093d11%3A0x697f92b8b84abe8f!2sVyborgsky%20District%2C%20Leningrad%20Oblast%2C%20Russia%2C%20188910!5e0!3m2!1sen!2seg!4v1613157298132!5m2!1sen!2seg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

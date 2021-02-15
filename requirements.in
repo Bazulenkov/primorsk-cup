@@ -1,0 +1,7 @@
+django
+psycopg2-binary
+python-dotenv
+Pillow
+sorl-thumbnail
+WeasyPrint
+gunicorn
