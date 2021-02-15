@@ -1,4 +1,4 @@
-name: Primorsk-cup CI/CD
+name: primorsk-cup CI/CD
 
 on:
   push:
