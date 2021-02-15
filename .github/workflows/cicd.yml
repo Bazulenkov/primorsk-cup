@@ -3,7 +3,7 @@ name: Primorsk-cup CI/CD
 on:
   push:
     branches:
-      - master
+      - main
 
     # Publish `v1.2.3` tags as releases.
     tags:
