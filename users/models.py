@@ -43,7 +43,7 @@ class UserManager(BaseUserManager):
 class Discipline(models.Model):
     """Модель дисциплины."""
 
-    title = models.CharField(max_length=8)
+    title = models.CharField(max_length=10)
     slug = models.SlugField(max_length=10, unique=True)
     color = models.CharField(max_length=10, blank=True, null=True)
 

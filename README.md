@@ -26,8 +26,7 @@ DEBUG=1
 ```
 Сгенерировать SECRET_KEY вы можете, например, по этой статье https://tech.serhatteker.com/post/2020-01/django-create-secret-key/
 - Установите зависимости `pip install -r requirements.txt`
-- Создайте все необходимые таблицы в базе данных - выполните команду `./manage.py migrate`  
-- Импортируйте теги в базу - выполните команду `./manage.py load_discipline`  
+- Создайте все необходимые таблицы в базе данных - выполните команду `./manage.py migrate`   
 - Создайте администратора сайта `./manage.py createsuperuser` (Администратор тоже будет отображаться в списках участников - поэтому после создания администратора, нужно зайти в админку, и добавить все недостающие поля в запись администратора) 
 
 Чтобы запустить проект на локальной машине - `./manage.py runserver`
@@ -58,9 +57,10 @@ scp Dockerfile-nginx {user}@{server-ip}:
 
 ```
 - Запустите docker-compose командой `sudo docker-compose up -d` 
-- Накатите миграции `sudo docker-compose exec web python manage.py migrate`
-- Соберите статику командой `sudo docker-compose exec web python manage.py collectstatic --no-input`
-- Создайте суперпользователя Django `sudo docker-compose exec web python manage.py createsuperuser --username admin --email 'admin@yamdb.com'`
+- Накатите миграции `sudo docker-compose exec app python manage.py migrate`
+- Соберите статику командой `sudo docker-compose exec app python manage.py collectstatic --no-input`
+- Импортируйте теги в базу - выполните команду `sudo docker-compose exec app ./manage.py load_discipline`
+- Создайте суперпользователя Django `sudo docker-compose exec app python manage.py createsuperuser --username admin --email 'admin@yamdb.com'`
 
 ## CI/CD
 ### Для автоматического деплоя на сервер необходимо:
