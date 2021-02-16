@@ -59,7 +59,7 @@ scp Dockerfile-nginx {user}@{server-ip}:
 - Запустите docker-compose командой `sudo docker-compose up -d` 
 - Накатите миграции `sudo docker-compose exec app python manage.py migrate`
 - Импортируйте теги в базу - выполните команду `sudo docker-compose exec app ./manage.py load_discipline`
-- Создайте суперпользователя Django `sudo docker-compose exec app python manage.py createsuperuser --username admin --email 'admin@yamdb.com'`
+- Создайте суперпользователя Django `sudo docker-compose exec app python manage.py createsuperuser --email 'admin@fake.com'`
 
 ## CI/CD
 ### Для автоматического деплоя на сервер необходимо:
