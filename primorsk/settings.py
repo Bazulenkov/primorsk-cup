@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default=get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get("DEBUG") if os.environ.get("DEBUG") else "0"))
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "onwind.ru"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "onwind.ru", "primorsk-cup.ru"]
 
 
 # Application definition
