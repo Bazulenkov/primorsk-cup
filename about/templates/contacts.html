@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Контакты{% endblock %}
 {% block content %}
-{% include "includes/header.html" %}
-<main class="main container">
-    <div class="main__header">
-        <h1 class="main__title">Контакты</h1>
-    </div>
-    <div class="custom-center-block">
-        <p class="custom-text-block">Адрес рейс-офиса</p>
-        <p class="custom-text-block">Контактный телефон, email, whatsapp и т.д.</p>
+{% include "includes/header.html" with contacts=True %}
+<main>
+    <div class="container">
+        <h1>Контакты</h1>
+            <p>Адрес рейс-офиса будет уточнен за неделю до начала соревнований. Пока ориентируемся на отель Маннола.</p>
+            <p>Контактный телефон, email, whatsapp и т.д.</p>
+            <p>Чуть позже здесь появится форма обратной связи.</p>
     </div>
 </main>
 {% endblock %}

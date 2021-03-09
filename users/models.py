@@ -77,9 +77,7 @@ class User(AbstractUser):
         on_delete=models.SET_DEFAULT,
         related_name="participants",
     )
-    trainer = models.CharField(
-        verbose_name="Тренер", max_length=50, blank=True
-    )
+    trainer = models.CharField(verbose_name="Тренер", max_length=50, blank=True)
     club = models.CharField(verbose_name="Клуб", max_length=50, blank=True)
     city = models.CharField(verbose_name="Город", max_length=50)
     birthday = models.DateField(verbose_name="Дата рождения", null=True)

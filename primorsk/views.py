@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 
 
 def page_not_found(request, exception):
@@ -9,3 +10,7 @@ def page_not_found(request, exception):
 
 def server_error(request):
     return render(request, "misc/500.html", status=500)
+
+
+def index_view(request):
+    return redirect(reverse("about:competitions"))

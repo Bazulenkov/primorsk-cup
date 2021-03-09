@@ -35,6 +35,7 @@ DEBUG = bool(int(os.environ.get("DEBUG") if os.environ.get("DEBUG") else "0"))
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
+    "testserver",
     "onwind.ru",
     "www.onwind.ru",
     "primorsk-cup.ru",
@@ -95,23 +96,24 @@ WSGI_APPLICATION = "primorsk.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": os.environ.get("DB_ENGINE"),
-        "NAME": os.environ.get("POSTGRES_DB"),
-        "USER": os.environ.get("POSTGRES_USER"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
-        "HOST": os.environ.get("DB_HOST"),
-        "PORT": os.environ.get("DB_PORT"),
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
     }
-}
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": os.environ.get("DB_ENGINE"),
+            "NAME": os.environ.get("POSTGRES_DB"),
+            "USER": os.environ.get("POSTGRES_USER"),
+            "PASSWORD": os.environ.get("POSTGRES_PASSWORD"),
+            "HOST": os.environ.get("DB_HOST"),
+            "PORT": os.environ.get("DB_PORT"),
+        }
+    }
 
 
 # Password validation
@@ -155,7 +157,6 @@ STATIC_ROOT = BASE_DIR / "static"
 
 
 MEDIA_URL = "media/"
-
 MEDIA_ROOT = BASE_DIR / "media"
 
 LOGIN_URL = "/auth/login/"

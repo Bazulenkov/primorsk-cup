@@ -92,6 +92,7 @@ TELEGRAM_TOKEN # Токен бота
 - [Gunicorn](https://gunicorn.org/)
 - [NGINX](https://nginx.org)
 - [GitHub Actions](https://github.com/features/actions)
+- [Bootstrap](https://getbootstrap.com/)
 
 ## Authors
 

@@ -19,5 +19,5 @@ urlpatterns = [
         views.ParticipantListView.as_view(),
         name="discipline_participants",
     ),
-    path("", views.ParticipantListView.as_view(), name="index"),
+    path("", views.ParticipantListView.as_view(), name="participants"),
 ]

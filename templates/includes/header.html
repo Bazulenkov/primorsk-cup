@@ -1,24 +1,63 @@
-<header class="header">
-    <nav class="nav">
-        <div class="nav__container container">
-            <ul class="nav__items list">
-                <li class="nav__item {% if participants %}nav__item_active{% endif %}"><a href="{% url 'index' %}" class="nav__link link">Участники</a>
-                    <span class="badge badge_style_blue nav__badge" id="counter">{{ participants_count }}</span></li>
-                    <li class="nav__item {% if competitions %}nav__item_active{% endif %}"><a href="{% url 'about:competitions' %}" class="nav__link link">Соревнования</a></li>
-                    <li class="nav__item {% if contacts %}nav__item_active{% endif %}"><a href="{% url 'about:contacts' %}" class="nav__link link">Контакты</a></li>
-            </ul>            
-            {% if user.is_authenticated %}
-            <ul class="nav__items list">
-                <li class="nav__item"><a href="{% url 'participant-details' user.id %}" class="nav__link link">{{ user }}</a></li>
-                <li class="nav__item"><a href="{% url 'password_change' %}" class="nav__link link">Изменить пароль</a></li>
-                <li class="nav__item"><a href="{% url 'logout' %}" class="nav__link link">Выход</a></li>
+<header class="navbar navbar-expand-md navbar-light bg-light">
+    <nav class="container-xxl flex-wrap navbar-light bg-light" aria-label="Main navigation">
+        <a class="navbar-brand" href="/" aria-label="PrimorskCup">PrimorskCup</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar"
+            aria-controls="bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="bdNavbar">
+            <ul class="navbar-nav flex-row flex-wrap">
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2{% if competitions %} active" aria-current="true{% endif %}"
+                        href="{% url 'about:competitions' %}">Соревнования</a>
+                </li>
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2{% if contacts %} active" aria-current="true{% endif %}"
+                        href="{% url 'about:contacts' %}">Контакты</a>
+                </li>
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2{% if participants %} active" aria-current="true{% endif %}"
+                        href="{% url 'participants' %}">
+                        Участники
+                        <span class="badge badge_style_blue nav__badge" id="counter">{{ participants_count }}</span>
+                    </a>
+                </li>
             </ul>
-            {% else %}
-            <ul class="nav__items list">
-                <li class="nav__item"><a href="{% url 'login' %}" class="nav__link link">Войти</a></li>
-                <li class="nav__item"><a href="{% url 'signup' %}" class="button button_style_blue">Зарегистрироваться</a></li>
+
+            <hr class="text-black-50 my-0">
+
+            <ul class="navbar-nav flex-row flex-wrap ms-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2" href="{% url 'participant-details' user.id %}">
+                        <small class="ms-2">{{ user }}</small>
+                    </a>
+                </li>
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2" href="{% url 'password_change' %}">
+                        <small class="ms-2">Изменить пароль</small>
+                    </a>
+                </li>
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2" href="{% url 'logout' %}">
+                        <small class="ms-2">Выход</small>
+                    </a>
+                </li>
+                {% else %}
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2" href="{% url 'login' %}">
+                        <small class="ms-2">Войти</small>
+                    </a>
+                </li>
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2" href="{% url 'signup' %}">
+                        <small class="ms-2">Зарегистрироваться</small>
+                    </a>
+                </li>
+                {% endif %}
             </ul>
-            {% endif %}
+
         </div>
     </nav>
 </header>

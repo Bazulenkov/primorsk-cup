@@ -1,13 +1,19 @@
-<footer class="footer">
-    <div class="footer__container container">
-        <a href="{% url 'index' %}" class="footer__brand link">Primorsk Cup</a>
-        <p class="footer__brand link">Соревнования по виндсерфингу <span style="color:red">Primorsk</span> Cup © {{ year }}, все права защищены.</p>
-        
-        <ul class="footer__items">
-            <li class="footer__item"><a href="{% url 'about:author' %}" class="footer__link link">Об авторе </a></li>
-            <li class="footer__item"><a href="{% url 'about:tech' %}" class="footer__link link">Технологии</a></li>
-        </ul>
-    <!-- <div class="container"> -->
-    <!-- </div>         -->
+<footer class="footer mt-auto border-top bg-light">
+    <div class="container h-100">
+        <div class="row align-items-center h-100">
+            <div class="col-md-8 order-last order-md-first">
+                <span class="text-muted">
+                    Соревнования по виндсерфингу <span style="color:red">Primorsk</span> Cup © {{ year }}, все права
+                    защищены.
+                </span>
+            </div>
+            <div class="col">
+                <a href="{% url 'about:author' %}" class="link-secondary">Об авторе</a>
+            </div>
+            <div class="col">
+                <a href="{% url 'about:tech' %}" class="link-secondary">Технологии</a>
+            </div>
+        </div>
     </div>
+
 </footer>

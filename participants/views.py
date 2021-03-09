@@ -21,7 +21,7 @@ class ParticipantListView(ListView):
 
     # queryset = Discipline.objects.all()
     # model = User
-    template_name = "index.html"
+    template_name = "participants.html"
     context_object_name = "participant_list"
 
     def __init__(self, **kwargs) -> None:

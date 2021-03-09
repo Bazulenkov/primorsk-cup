@@ -1,24 +1,51 @@
 {# шаблон base.html **#}
 
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Соревнования по виндсерфингу в классе IQFoil и Open Foil.">
+    <meta name="author" content="Anton Bazulenkov">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>{% block title %}{% endblock %} | Primorsk Cup</title>
     {% load static %}
     <link rel="stylesheet" href="{% block css %}{% static 'pages/index.css' %}{% endblock %}">
-</head>
-<body class="body">
-    {% block content %}
-        {% include "includes/header.html" with participants=True %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
 
-                <!-- Содержимое страницы -->
+    <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url" content="primorsk-cup.ru" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Соревнования по виндсерфингу в классе IQFoil и Open Foil." />
+    <meta property="og:description" content="Дорогие друзья, приглашаем всех желающих, на ставшие уже традиционными соревнования в дисциплине курс-рейс, в Приморске. Гоняемся общим флотом. И фойлисты, и староверы на плавниках.
+    В этом году эвент получил официальный статус класса IQFoil. По результатам отдельного зачета будет произведен отбор в сборную России на право участия в выездных международных соревнованиях.
+    В общем будет драйвово ,весело и душевно!  Всем курс-рейс и до встречи на воде!!!" />
+    <meta property="og:image" content="primorsk-cup.ru/path/image.jpg" />
+</head>
+
+<body class="body d-flex flex-column vh-100">
+    <div class="visually-hidden-focusable">
+        <div class="container-xxl">
+            <a class="d-inline-flex p-2 m-1" href="#content">Skip to main content</a>
+            <a class="d-none d-md-inline-flex p-2 m-1" href="#bd-docs-nav">Skip to docs navigation</a>
+        </div>
+    </div>
+    {% block content %}
+    {% include "includes/header.html" with participants=True %}
+
+    <!-- Содержимое страницы -->
     {% endblock content %}
     {% include "includes/footer.html" %}
-
+    <!-- JavaScript: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
