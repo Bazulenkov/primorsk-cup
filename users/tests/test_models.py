@@ -1,7 +1,5 @@
 from django.test import TestCase
-from posts.models import Post
-from posts.models import Group
-from posts.models import User
+from posts.models import Group, Post, User
 
 
 class PostModelTest(TestCase):

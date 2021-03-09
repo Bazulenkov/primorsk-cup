@@ -1,9 +1,7 @@
 from django.test import Client, TestCase
 from django.urls import reverse
-
 from posts.forms import PostForm
-from posts.models import Post, Group
-from posts.models import User
+from posts.models import Group, Post, User
 
 
 class TaskCreateFormTests(TestCase):
