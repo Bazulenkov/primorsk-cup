@@ -14,7 +14,7 @@ class UserManager(BaseUserManager):
     def _create_user(self, email, password, **extra_fields):
         """Create and save a User with the given email and password."""
         if not email:
-            raise ValueError("The given email must be set")
+            raise ValueError(_("Users must have an email address"))
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
         user.set_password(password)
@@ -68,7 +68,6 @@ class User(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     objects = UserManager()
-
     discipline = models.ForeignKey(
         Discipline,
         verbose_name="Дисциплина",
