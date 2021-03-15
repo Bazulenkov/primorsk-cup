@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.forms import ModelForm, EmailField, EmailInput
 
 User = get_user_model()
 
@@ -28,10 +29,10 @@ class CreationForm(UserCreationForm):
         )
 
 
-class UpdateForm(UserCreationForm):
+class UpdateForm(ModelForm):
     """Cобственный класс для формы регистрации."""
 
-    class Meta(UserCreationForm.Meta):
+    class Meta:
         model = User
         fields = (
             "first_name",
@@ -45,3 +46,17 @@ class UpdateForm(UserCreationForm):
             "category",
             "image",
         )
+
+    # def __init__(self, *args, **kwargs) -> None:
+    #     super().__init__(*args, **kwargs)
+    #     self.fields["image"].widget.attrs.update(size="40")
+
+
+# class AuthForm(AuthenticationForm):
+#     """
+#     Form class for authenticating users.
+
+#     Form that accepts email/password instead username/passwords logins.
+#     """
+
+#     email = EmailField(widget=EmailInput(attrs={"autofocus": True}))

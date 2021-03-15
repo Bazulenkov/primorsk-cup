@@ -8,7 +8,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic.edit import UpdateView
 from django.views.generic.list import ListView
 
-from users.forms import CreationForm
+from users.forms import UpdateForm
 from users.models import Discipline
 
 User = get_user_model()
@@ -49,9 +49,10 @@ class ParticipantView(DetailView):
 
 
 class ParticipantUpdate(LoginRequiredMixin, UpdateView):
-    form_class = CreationForm
+    form_class = UpdateForm
     model = User
-    template_name = "registration/password_change_form.html"
+    template_name = "signup.html"
+    context_object_name = "participant"
 
 
 def list_pdf(request):

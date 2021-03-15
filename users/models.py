@@ -90,7 +90,10 @@ class User(AbstractUser):
         blank=True,
     )
     image = models.ImageField(
-        upload_to="users/", blank=True, default="users/avatar.jpg"
+        verbose_name=_("Фото"),
+        upload_to="users/",
+        blank=True,
+        default="users/avatar.jpg",
     )
 
     class Meta:
