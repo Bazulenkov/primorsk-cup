@@ -21,7 +21,7 @@
         {% endif %}
     </h1>
 
-    <div class="card mx-auto col-md-8 " style="max-width: 50rem;">
+    <div class="card mx-auto col-md-8 my-3" style="max-width: 50rem;">
         <div class="card-body">
             <form method="post" action="{% url 'signup' %}" enctype="multipart/form-data">
                 {% csrf_token %}
