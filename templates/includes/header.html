@@ -10,7 +10,7 @@
             <ul class="navbar-nav flex-row flex-wrap">
                 <li class="nav-item col-md-auto">
                     <a class="nav-link py-1 px-2{% if competitions %} active" aria-current="true{% endif %}"
-                        href="{% url 'about:competitions' %}">Соревнования</a>
+                        rounded-pill href="{% url 'about:competitions' %}">Соревнования</a>
                 </li>
                 <li class="nav-item col-md-auto">
                     <a class="nav-link py-1 px-2{% if contacts %} active" aria-current="true{% endif %}"
@@ -20,7 +20,7 @@
                     <a class="nav-link py-1 px-2{% if participants %} active" aria-current="true{% endif %}"
                         href="{% url 'participants' %}">
                         Участники
-                        <span class="badge badge_style_blue nav__badge" id="counter">{{ participants_count }}</span>
+                        <span class="badge rounded-pill bg-primary" id="counter">{{ participants_count }}</span>
                     </a>
                 </li>
             </ul>
@@ -34,11 +34,6 @@
                         <small class="ms-2">{{ user }}</small>
                     </a>
                 </li>
-                <!-- <li class="nav-item col-md-auto">
-                    <a class="nav-link py-1 px-2" href="{% url 'password_change' %}">
-                        <small class="ms-2">Изменить пароль</small>
-                    </a>
-                </li> -->
                 <li class="nav-item col-md-auto">
                     <a class="nav-link py-1 px-2" href="{% url 'logout' %}">
                         <small class="ms-2">Выход</small>
