@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% include "includes/header.html" %}
+<main class="main container">
+    <div class="row justify-content-center">
+        <div class="d-grid col-md-8 p-5">
+            <div class="card text-center">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <p class="card-text">Вы точно хотите удалить "{{ object }}"?</p>
+                        <button class="btn btn-primary" value="Confirm">Удалить</button>
+                    </form>
+                </div> <!-- card body -->
+            </div> <!-- card -->
+        </div> <!-- col -->
+    </div> <!-- row -->
+</main>
+{% endblock %}

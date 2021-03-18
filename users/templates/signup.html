@@ -49,15 +49,20 @@
                     </div>
                 </div>
                 {% endfor %}
-
-                <div class="col-md-6 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
+                <div class="row">
+                    <div class="text-center">
                         {% if participant %}
-                        Сохранить
+                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                        <a href="{% url 'password_change' %}" class="btn btn-link btn-sm">
+                            Изменить пароль
+                        </a>
+                        <a href="{% url 'password_reset' %}" class="btn btn-link btn-sm">
+                            Удалить
+                        </a>
                         {% else %}
-                        Создать аккаунт
+                        <button type="submit" class="btn btn-primary mx-auto">Создать аккаунт</button>
                         {% endif %}
-                    </button>
+                    </div>
                 </div>
             </form>
         </div> <!-- card body -->

@@ -15,6 +15,11 @@ urlpatterns = [
         name="participant_update",
     ),
     path(
+        "<int:pk>/delete/",
+        views.ParticipantDelete.as_view(),
+        name="participant_delete",
+    ),
+    path(
         "<slug:discipline>/",
         views.ParticipantListView.as_view(),
         name="discipline_participants",

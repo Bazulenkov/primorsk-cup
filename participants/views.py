@@ -4,8 +4,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.template.loader import render_to_string
+from django.urls import reverse_lazy
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.list import ListView
 
 from users.forms import UpdateForm
@@ -53,6 +54,14 @@ class ParticipantUpdate(LoginRequiredMixin, UpdateView):
     model = User
     template_name = "signup.html"
     context_object_name = "participant"
+
+
+class ParticipantDelete(LoginRequiredMixin, DeleteView):
+    """Удаление участника соревнований (и пользователя сайта)."""
+
+    model = User
+    template_name = "user_confirm_delete.html"
+    success_url = reverse_lazy("index")
 
 
 def list_pdf(request):
