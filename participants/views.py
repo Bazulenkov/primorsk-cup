@@ -10,12 +10,14 @@ from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.list import ListView
 
 from users.forms import UpdateForm
+from .mixins import UserProfileTestMixin
+
 from users.models import Discipline
 
 User = get_user_model()
 
 
-class ParticipantListView(ListView):
+class ParticipantListView(LoginRequiredMixin, ListView):
     """Главная страница.
 
     Просмотр списка участников."""
@@ -41,7 +43,7 @@ class ParticipantListView(ListView):
         return queryset
 
 
-class ParticipantView(DetailView):
+class ParticipantView(LoginRequiredMixin, DetailView):
     """Просмотр деталей участника."""
 
     model = User
@@ -49,14 +51,14 @@ class ParticipantView(DetailView):
     context_object_name = "participant"
 
 
-class ParticipantUpdate(LoginRequiredMixin, UpdateView):
+class ParticipantUpdate(LoginRequiredMixin, UserProfileTestMixin, UpdateView):
     form_class = UpdateForm
     model = User
     template_name = "signup.html"
     context_object_name = "participant"
 
 
-class ParticipantDelete(LoginRequiredMixin, DeleteView):
+class ParticipantDelete(LoginRequiredMixin, UserProfileTestMixin, DeleteView):
     """Удаление участника соревнований (и пользователя сайта)."""
 
     model = User
