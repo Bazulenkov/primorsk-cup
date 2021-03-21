@@ -18,7 +18,11 @@
     <div data-bs-spy="scroll" data-bs-target="#navbar-participants" data-bs-offset="0" tabindex="0">
         {% for disciplin in view.all_disciplines %}
         <div id="{{ disciplin.slug }}" class="my-3 p-3 bg-body rounded shadow-sm">
-            <h2 class="h6 border-bottom pb-2 mb-0">{{ disciplin.title}}</h2>
+            <h2 class="h6 border-bottom pb-2 mb-0">{{ disciplin.title}}
+                <span class="badge rounded-pill bg-light text-dark" id="counter">
+                    {{ disciplin.participants.count }}
+                </span>
+            </h2>
             {% for participant in disciplin.participants.all %}
             <div class="d-flex text-muted pt-3">
                 <a href="{{ participant.get_absolute_url }}">
