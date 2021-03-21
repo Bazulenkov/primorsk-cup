@@ -5,50 +5,35 @@
 {% block css %}{% static 'pages/single.css' %}{% endblock %}
 
 {% block content %}
-    {% include "includes/header.html" %}
-    <main class="main container">
-        <div class="single-card">
-            {% load thumbnail %}
-            {% thumbnail participant.image "480x480" crop="center" upscale=True as im %}
-            <img src="{{ im.url }}" class="single-card__image">
-            {% endthumbnail %}
-            <div class="single-card__info">
-                <div class="single-card__header-info">
-                    <h1 class="single-card__title">{{ participant }}</h1>
-                </div>
-                <div class="single-card__items single-card__items_column">
-                    <p class="single-card__text"><span class="icon-time"></span>{{ participant }} мин.</p>
-                    {% if user.is_authenticated %}
-                    <ul class="single-card__items">
-                        <li class="single-card__item"><p class="single-card__text"><span class="icon-user"></span> {{ participant }}</p></li>
+{% include "includes/header.html" %}
+<main class="container">
+    <div class="card my-3 mx-auto" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-6">
+                {% load thumbnail %}
+                {% thumbnail participant.image "360x360" crop="center" upscale=True as im %}
+                <img src="{{ im.url }}" class="img-fluid" alt="{{ participant }}">
+                {% endthumbnail %}
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h1 class="h5">{{ participant }}</h1>
                         {% if user == participant %}
-                        <li class="single-card__item">  <a style="margin-left: 2.5em" href="{% url 'participant_update' participant.id %}" class="single-card__text">Редактировать</a></li>
+                        <a href="{% url 'participant_update' participant.id %}" class="card-link">Редактировать</a>
                         {% endif %}
-                    </ul>
-                    {% else %}
-                    <p class="single-card__text"><span class="icon-user"></span> {{ participant }}</p>
+                    </div>
+                    <p class="card-text">{{ participant.birthday }}</p>
+                    {% if participant.category %}
+                    <p class="card-text">Спортивный разряд: {{ participant.category }}</p>
                     {% endif %}
-                </div>
-                <div class="single-card__section">
-                    <h3 class="single-card__section-title">Детали:</h3>
-                    <div class="single-card__items single-card__items_column">
-                        <div class=" single-card__section-item">
-                            <p>{{ participant }}</p>
-                            <p>{{ participant.birthday }}</p>
-                            <p>{{ participant.category }}</p>
-                            <p>{{ participant.city }}</p>
-                            <p>{{ participant.club }}</p>
-                            <p>{{ participant.trainer }}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-card__section">
-                    <h3 class="single-card__section-title">Описание:</h3>
-                    <div class="single-card__section-text">
-                        {{ participant }}
-                    </div>
+                    <p class="card-text">{{ participant.club }}</p>
+                    <p class="card-text">{{ participant.trainer }}</p>
+                    <p class="card-text">{{ participant.city }}</p>
+
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 {% endblock content %}
