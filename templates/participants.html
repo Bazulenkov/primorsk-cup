@@ -4,16 +4,19 @@
 
 {% block content %}
 {% include "includes/header.html" with participants=True %}
-<main class="container" style="position: relative">
-    <nav id="navbar-participants" class="navbar position-sticky navbar-light px-3 border-bottom">
+<main class="container" style="position: relative;">
+    <nav id="navbar-participants" class="navbar sticky-md-top navbar-light bg-body px-md-3 border-bottom"
+        aria-label="Secondary navigation">
+        <!-- <div class="cotainer"> -->
         <span class="navbar-brand">Участники</span>
         <ul class="nav nav-pills">
             {% for disciplin in view.all_disciplines %}
             <li class="nav-item">
-                <a class="nav-link" href="#{{ disciplin.slug}}">@{{ disciplin.title}}</a>
+                <a class="nav-link" href="#{{ disciplin.slug}}">@{{ disciplin.title }}</a>
             </li>
             {% endfor %}
         </ul>
+        <!-- </div> -->
     </nav>
     <div data-bs-spy="scroll" data-bs-target="#navbar-participants" data-bs-offset="0" tabindex="0">
         {% for disciplin in view.all_disciplines %}
