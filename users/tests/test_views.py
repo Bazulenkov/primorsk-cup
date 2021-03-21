@@ -45,7 +45,9 @@ class PostPagesTests(TestCase):
         templates_pages_names = {
             "index.html": reverse("posts:index"),
             "new.html": reverse("posts:new_post"),
-            "group.html": (reverse("posts:group", kwargs={"slug": "slugtest"})),
+            "group.html": (
+                reverse("posts:group", kwargs={"slug": "slugtest"})
+            ),
         }
         # Проверяем, что при обращении к name вызывается
         # соответствующий HTML-шаблон
@@ -82,7 +84,9 @@ class PostPagesTests(TestCase):
     def test_group_page_dont_show_context_from_other_group(self):
         """Шаблон group сформирован без поста в группе."""
         response = self.authorized_client.get(
-            reverse("posts:group", kwargs={"slug": self.group_without_post.slug})
+            reverse(
+                "posts:group", kwargs={"slug": self.group_without_post.slug}
+            )
         )
 
         # Взяли первый элемент из списка и проверили, что его содержание

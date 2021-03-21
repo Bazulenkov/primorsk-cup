@@ -10,9 +10,9 @@ from django.views.generic.edit import DeleteView, UpdateView
 from django.views.generic.list import ListView
 
 from users.forms import UpdateForm
-from .mixins import UserProfileTestMixin
-
 from users.models import Discipline
+
+from .mixins import UserProfileTestMixin
 
 User = get_user_model()
 
