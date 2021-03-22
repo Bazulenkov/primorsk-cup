@@ -1,3 +1,4 @@
+from django.contrib.admin.widgets import AdminDateWidget
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import ModelForm
@@ -12,6 +13,7 @@ class CreationForm(UserCreationForm):
         super(CreationForm, self).__init__(*args, **kwargs)
         self.fields["first_name"].required = True
         self.fields["last_name"].required = True
+        self.fields["birthday"].widget = AdminDateWidget()
 
     class Meta(UserCreationForm.Meta):
         model = User
@@ -30,8 +32,17 @@ class CreationForm(UserCreationForm):
         )
 
 
+# Сделал отдельную форму для редактирования, чтобы при редактировании не
+# вылезало полей изменения пароля. Под изменения пароля использую штатную форму
+# Django
 class UpdateForm(ModelForm):
     """Cобственный класс для формы редактирования профиля (регистрации)."""
+
+    def __init__(self, *args, **kwargs):
+        super(UpdateForm, self).__init__(*args, **kwargs)
+        self.fields["first_name"].required = True
+        self.fields["last_name"].required = True
+        self.fields["birthday"].widget = AdminDateWidget()
 
     class Meta:
         model = User

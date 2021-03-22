@@ -10,10 +10,14 @@
     <meta name="description" content="Соревнования по виндсерфингу в классе IQFoil и Open Foil.">
     <meta name="author" content="Anton Bazulenkov">
 
+
+    {% block extrahead %}
+    {% endblock extrahead%}
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <title>{% block title %}{% endblock %} | Primorsk Cup</title>
+
     {% load static %}
 
     <!-- favicon -->
@@ -34,6 +38,8 @@
     В этом году эвент получил официальный статус класса IQFoil. По результатам отдельного зачета будет произведен отбор в сборную России на право участия в выездных международных соревнованиях.
     В общем будет драйвово ,весело и душевно!  Всем курс-рейс и до встречи на воде!!!" />
     <meta property="og:image" content="{% static '1200x630_primorsk_cup.jpg' %}" />
+
+
 </head>
 
 <body class="d-flex flex-column h-100">
