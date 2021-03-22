@@ -23,7 +23,8 @@
 
     <div class="card mx-auto col-md-8 my-3" style="max-width: 50rem;">
         <div class="card-body">
-            <form method="post" action="{% url 'signup' %}" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data" {% if participant %}
+                action="{% url 'participant_update' participant.id%}" {% else %} action="{% url 'signup' %}" {% endif%}>
                 {% csrf_token %}
                 {% for field in form %}
                 <div class="row mb-3" aria-required={% if field.field.required %}"true"{%else%}"false"{%endif%}>
