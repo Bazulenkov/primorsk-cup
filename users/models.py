@@ -45,7 +45,7 @@ class Discipline(models.Model):
 
     title = models.CharField(max_length=10)
     slug = models.SlugField(max_length=10, unique=True)
-    color = models.CharField(max_length=10, blank=True, null=True)
+    # color = models.CharField(max_length=10, blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -68,6 +68,9 @@ class User(AbstractUser):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
     objects = UserManager()
+    sailnum = models.CharField(
+        verbose_name="Номер на парусе", max_length=10, blank=True
+    )
     discipline = models.ForeignKey(
         Discipline,
         verbose_name="Дисциплина",

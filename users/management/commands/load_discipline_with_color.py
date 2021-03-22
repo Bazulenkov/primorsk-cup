@@ -7,9 +7,9 @@ from users.models import Discipline
 User = get_user_model()
 
 DISCIPLINES = {
-    "iqfoil": {"title": "iQFOiL", "slug": "iqfoil"},
-    "openfoil": {"title": "Open Foil", "slug": "openfoil"},
-    "formula": {"title": "Formula", "slug": "formula"},
+    "iqfoil": {"title": "iQFOiL", "slug": "iqfoil", "color": "orange"},
+    "openfoil": {"title": "Open Foil", "slug": "openfoil", "color": "green"},
+    "formula": {"title": "Formula", "slug": "formula", "color": "purple"},
 }
 
 
@@ -20,6 +20,7 @@ class Command(BaseCommand):
                 discipline, created = Discipline.objects.get_or_create(
                     title=DISCIPLINES[discipline]["title"],
                     slug=DISCIPLINES[discipline]["slug"],
+                    color=DISCIPLINES[discipline]["color"],
                 )
                 if created:
                     discipline.save()

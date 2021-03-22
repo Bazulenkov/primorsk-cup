@@ -16,9 +16,10 @@ class CreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         fields = (
+            "email",
             "first_name",
             "last_name",
-            "email",
+            "sailnum",
             "discipline",
             "trainer",
             "club",
@@ -30,14 +31,15 @@ class CreationForm(UserCreationForm):
 
 
 class UpdateForm(ModelForm):
-    """Cобственный класс для формы регистрации."""
+    """Cобственный класс для формы редактирования профиля (регистрации)."""
 
     class Meta:
         model = User
         fields = (
+            "email",
             "first_name",
             "last_name",
-            "email",
+            "sailnum",
             "discipline",
             "trainer",
             "club",

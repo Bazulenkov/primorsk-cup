@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {% load static %}
     <link rel="stylesheet" href="{% static 'list_pdf.css' %}">
 </head>
@@ -14,29 +15,31 @@
     <h2>Список участников</h2>
     {% for discipline in disciplines %}
     <h3>{{ discipline.title }}</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>ФИО</th>
-                    <th>Спортивный разряд</th>
-                    <th>Дата рождения</th>
-                    <th>Клуб</th>
-                    <th>Город</th>
-                </tr>
-            </thead>
-            <tbody> {% for participant in discipline.participants.all %}
-                <tr class="row{% cycle " 1 " " 2 " %}">
-                    <td>{{ forloop.counter }}. </td>
-                    <td>{{ participant }}</td>
-                    <td>{{ participant.category }}</td>
-                    <td>{{ participant.birthday }}</td>
-                    <td>{{ participant.club }}</td>
-                    <td>{{ participant.city }}</td>
-                </tr> {% endfor %}
-                <tr> </tr>
-            </tbody>
-        </table>
+    <table>
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>ФИО</th>
+                <th>Номер на парусе</th>
+                <th>Спортивный разряд</th>
+                <th>Дата рождения</th>
+                <th>Клуб</th>
+                <th>Город</th>
+            </tr>
+        </thead>
+        <tbody> {% for participant in discipline.participants.all %}
+            <tr class="row{% cycle " 1 " " 2 " %}">
+                <td>{{ forloop.counter }}. </td>
+                <td>{{ participant }}</td>
+                <td>{{ participant.sailnum }}</td>
+                <td>{{ participant.category }}</td>
+                <td>{{ participant.birthday }}</td>
+                <td>{{ participant.club }}</td>
+                <td>{{ participant.city }}</td>
+            </tr> {% endfor %}
+            <tr> </tr>
+        </tbody>
+    </table>
     {% endfor %}
 </body>
 

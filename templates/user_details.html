@@ -16,13 +16,10 @@
                 {% endthumbnail %}
             </div>
             <div class="col-md-6">
-                <div class="card-body">
-                    <div class="card-title">
-                        <h1 class="h5">{{ participant }}</h1>
-                        {% if user == participant %}
-                        <a href="{% url 'participant_update' participant.id %}" class="card-link">Редактировать</a>
-                        {% endif %}
-                    </div>
+                <div class="card-body h-100">
+                    <h1 class="h5 card-title">{{ participant }}</h1>
+                    <h2 class="h6 card-subtitle mb-2 text-muted">{{ participant.sailnum }}</h2>
+
                     <p class="card-text">{{ participant.birthday }}</p>
                     {% if participant.category %}
                     <p class="card-text">Спортивный разряд: {{ participant.category }}</p>
@@ -30,7 +27,12 @@
                     <p class="card-text">{{ participant.club }}</p>
                     <p class="card-text">{{ participant.trainer }}</p>
                     <p class="card-text">{{ participant.city }}</p>
-
+                    {% if user == participant %}
+                    <div class="card-link position-absolute bottom-0 mb-3">
+                        <a href="{% url 'participant_update' participant.id %}"
+                            class="card-link align-bottom">Редактировать</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

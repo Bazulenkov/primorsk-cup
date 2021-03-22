@@ -27,7 +27,7 @@
                 </span>
             </h2>
             {% for participant in disciplin.participants.all %}
-            <div class="d-flex text-muted pt-3">
+            <div class="d-flex text-muted  border-bottom pt-3">
                 <a href="{{ participant.get_absolute_url }}">
                     {% thumbnail participant.image "32x32" crop="center" upscale=True as im %}
                     <img src="{{ im.url }}" alt="{{ participant.username }}"
@@ -35,14 +35,14 @@
                     {% endthumbnail %}
                 </a>
 
-                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                <div class="small lh-sm w-100">
                     <div class="d-flex justify-content-between">
                         <a href="{{ participant.get_absolute_url }}" class="text-gray-dark">
                             {{ participant}}
                         </a>
                         <span>{{ participant.city }}</span>
                     </div>
-                    <!-- <span class="d-block mb-3">{{ participant.city }}</span> -->
+                    <span class="d-block mb-3">{{ participant.sailnum }}</span>
                 </div>
             </div>
             {% endfor %}
