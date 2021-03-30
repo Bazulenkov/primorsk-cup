@@ -162,10 +162,19 @@ MEDIA_ROOT = BASE_DIR / "media"
 LOGIN_URL = "/auth/login/"
 LOGIN_REDIRECT_URL = "index"
 
+
+# email config
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = os.environ.get("EMAIL_PORT")
+EMAIL_USE_TLS = bool(int(os.environ.get("EMAIL_USE_TLS")))
+
+
 #  подключаем движок filebased.EmailBackend
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 # указываем директорию, в которую будут складываться файлы писем
-EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
+# EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 
 # User substitution
