@@ -48,6 +48,12 @@ POSTGRES_USER=postgres # логин для подключения к базе д
 POSTGRES_PASSWORD=postgres # пароль для подключения к БД (установите свой)
 DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД 
+
+EMAIL_HOST = 'smtp.your-smtp-server.com'
+EMAIL_HOST_USER = 'email-user@your-domen.com'
+EMAIL_HOST_PASSWORD = 'email-password'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = 1
 ```
 - Скопируйте на сервер файлы `docker-compose.yaml`, `.env`, `Dockerfile-nginx`, `nginx.conf` командами:
 ```
