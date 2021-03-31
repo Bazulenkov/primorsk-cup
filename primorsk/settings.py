@@ -175,6 +175,7 @@ EMAIL_USE_TLS = bool(
         else "0"
     )
 )
+DEFAULT_FROM_EMAIL = os.environ.get("EMAIL_HOST_USER")
 
 
 #  подключаем движок filebased.EmailBackend
