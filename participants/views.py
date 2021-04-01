@@ -22,25 +22,13 @@ class ParticipantListView(LoginRequiredMixin, ListView):
 
     Просмотр списка участников."""
 
-    # queryset = Discipline.objects.all()
-    # model = User
+    model = User
     template_name = "participants.html"
     context_object_name = "participant_list"
 
     def __init__(self, **kwargs) -> None:
         self.all_disciplines = Discipline.objects.all()
         super().__init__(**kwargs)
-
-    def get_queryset(self):  # -> QuerySet:
-        # all_disciplines = [
-        #     discipline.slug for discipline in self.all_disciplines
-        # ]
-        discipline = self.kwargs.get("discipline")
-        if discipline:
-            queryset = User.objects.filter(discipline=discipline)
-        else:
-            queryset = User.objects.all()
-        return queryset
 
 
 class ParticipantView(LoginRequiredMixin, DetailView):
@@ -52,6 +40,8 @@ class ParticipantView(LoginRequiredMixin, DetailView):
 
 
 class ParticipantUpdate(LoginRequiredMixin, UserProfileTestMixin, UpdateView):
+    """Редактирование данных участниа."""
+
     form_class = UpdateForm
     model = User
     template_name = "signup.html"
