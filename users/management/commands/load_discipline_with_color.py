@@ -9,7 +9,7 @@ User = get_user_model()
 DISCIPLINES = {
     "iqfoil": {"title": "iQFOiL", "slug": "iqfoil", "color": "orange"},
     "openfoil": {"title": "Open Foil", "slug": "openfoil", "color": "green"},
-    "formula": {"title": "Formula", "slug": "formula", "color": "purple"},
+    # "formula": {"title": "Formula", "slug": "formula", "color": "purple"},
 }
 
 
