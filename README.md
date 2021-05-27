@@ -56,7 +56,7 @@ EMAIL_HOST_PASSWORD=email-password
 EMAIL_PORT=25
 EMAIL_USE_TLS=0
 ```
-- Скопируйте на сервер файлы `docker-compose.yaml`, `.env`, `Dockerfile-nginx`, `nginx.conf` командами:
+- Скопируйте на сервер файл `.env` командами:
 ```
 scp docker-compose.yaml  {user}@{server-ip}:
 scp .env {user}@{server-ip}:
