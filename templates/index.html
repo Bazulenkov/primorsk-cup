@@ -4,8 +4,164 @@
 
 {% block content %}
 {% include "includes/header.html" %}
+<link rel="stylesheet" href="{% static 'main_style.css' %}">
 <main class="container">
-    <img src="{% static '1080x1080_primorsk_cup_red.jpg' %}" class="img-fluid w-100"
-        alt="Primorsk invite to competitions">
+    <div class="container" style="width: 1200px; ">
+        <img src="{% static 'main_header.png' %}">
+        <div class="main_text">Дорогие друзья, приглашаем вас на ставшие уже традиционными соревнования по
+            виндсерфингу, в Приморске. Соревнования будут проходить в двух классах:</div>
+
+        <div class="higlight_text">
+            <div class="rect-item ">Олимпийский IQFoil</div>
+            <div class="rect-item ">Открытый класс OpenFoil</div>
+        </div>
+        <div class="main_text">И в трех дисциплинах:</div>
+
+
+        <div class="higlight_text">
+            <div class="rect-item ">Курс-рейс</div>
+            <div class="rect-item ">Слалом</div>
+            <div class="rect-item ">Марафон</div>
+        </div>
+        <div class="main_text">Для молодых участников (до 19 лет) эти соревнования являются этапом отбора на
+            международные соревнования 2021 года.</div>
+
+        <div class="main_text">Спортсмены будут бороться за шикарный переходящий кубок</div>
+        <div class="centr_header">PRIMORSK CUP</div>
+
+
+        <div class="main_text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="{% static 'cup1.png' %}" width="100%">
+                    </div>
+                    <div class="col-4">
+                        <img src="{% static 'cup2.png' %}" width="100%">
+                    </div>
+                    <div class="col-4">
+                        <img src="{% static 'cup3.png' %}" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="higlight_text">
+            <div>Чистая вода, ровный Балтийский ветер, идеальная фойловая акватория, красивый
+                сосновый берег, песчаные пляжи – все это привлекает большое количество спортсменов с разных
+                уголков нашей страны.</div>
+            <img src="{% static 'sunset.png' %}" width="100%">
+        </div>
+
+
+        <div class="centr_header">Видео предыдущих гонок</div>
+
+        <div class="main_text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <video controls width="100%">
+                            <source src="{% static 'FvsF 2019.mp4' %}" type="video/mp4">
+                        </video>
+
+                    </div>
+                    <div class="col-sm">
+                        <video controls width="100%">
+                            <source src="{% static 'FvsF 2020.mp4' %}" type="video/mp4">
+                        </video>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centr_header">Место проведения</div>
+
+        <div class="main_text">В 156 км от Санкт-Петербурга на берегу Финского залива, неподалеку от
+            города Приморска расположилась база отдыха Манола. На её территории разместились пансионат,
+            несколько коттеджей и летних дачных домиков, которые могут разместить в общей сложности до
+            280 человек банный комплекс с бассейном и кинозал.</div>
+
+        <div class="main_text">
+
+            <div class="container" style="width: 100%;">
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="{% static 'shore.png' %}">
+                    </div>
+                    <div class="col-sm">
+                        <img src="{% static 'sunset_small.png' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main_text">Всю подробную информацию можно найти на официальном сайте: <a
+                href="http://bazaadmiral.ru/bazaadm/manola/uslovija-prozhivanija-manola">База отдыха
+                Манола</a></div>
+
+        <div class="main_text">Телефон для бронирования: +79681838199 При бронировании по паролю
+            “Регата” будет предоставлена скидка.</div>
+
+
+
+        <div class="centr_header">Карта мероприятия</div>
+        <div class="main_text">
+            <img src="{% static 'map.png' %}" width="100%">
+        </div>
+
+
+        <div class="centr_header">Карта глубин</div>
+        <div class="main_text">
+            <img src="{% static 'map_depth.png' %}" width="100%">
+        </div>
+
+
+        <div class="centr_header">Информация о IQFoil</div>
+
+
+        <div class="higlight_text">
+            <div>
+                Парусный спорт становится более зрелищным и интересным. В частности,
+                всем известный класс RS:X (виндсерфинг) покидает Олимп и уступает место новому более
+                зрелищному классу - IQ Foil, который мы увидим уже на Олимпийских играх 2024.>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="{% static 'foil1.png' %}" width="100%">
+                    </div>
+                    <div class="col-6">
+                        <img src="{% static 'foil2.png' %}" width="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_text">Основное отличие этих двух классов: RS:X - парус и доска с плавником,
+            IQ Foil - парус, доска и подводное крыло. Как результат получаем выше скорость, лучше
+            углы, жестче борьбу. Главное преимущество IQ Foil - это полет, т.к. вместо плавника
+            расположен шедевр инженерной мысли - фойл.</div>
+
+
+        <div class="main_text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <img src="{% static 'equipment1.png' %}">
+                    </div>
+                    <div class="col-sm">
+                        <div style=" display: flex;align-items: center;justify-content: center;height: 100%">
+                            <img src="{% static 'equipment2.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main_text">Получается райдер не глиссирует по воде, как на RS:X, а за счет
+            фойла поднимается над водой на 20-70 см. Для развития максимальной скорости нужно
+            подняться как можно выше и удерживать высоту.</div>
+    </div>
 </main>
 {% endblock content %}
