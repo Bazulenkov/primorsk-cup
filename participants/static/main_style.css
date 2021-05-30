@@ -1,4 +1,4 @@
-.main_text {
+/* .main_text {
     font-size:24px;
     padding-left: 100px;
     padding-right: 100px;
@@ -6,10 +6,10 @@
     padding-bottom: 20px;
     margin-top: 20px;
     margin-bottom: 20px;    
-  }
+  } */
 
 .higlight_text {
-    font-size:24px;
+    /* font-size:24px; */
     padding-left: 100px;
     padding-right: 100px;
     background-color: #E5F6FF;
@@ -20,11 +20,11 @@
   }
   
 
-.centr_header{
+/* .centr_header{
     font-size: 40px;
     margin: auto;
     text-align: center;
-}
+} */
 
 /* .container{
     padding: 0px;
@@ -39,7 +39,7 @@
 
 
 .rect-item{
-    font-size:26px;
+    /* font-size:26px; */
     font-weight: bold;
     
     background-image: url("marker_rect.png");
