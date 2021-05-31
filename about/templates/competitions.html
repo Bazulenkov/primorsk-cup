@@ -19,10 +19,10 @@
         <p>Поделись ссылкой на Facebook!!!</p>
 
         <!-- Facebook share button code -->
-        <div class="fb-share-button" data-href="http://primorsk-cup.ru" data-layout="button_count" data-size="large"><a
+        <button class="fb-share-button btn btn-primary position-relative" data-href="http://primorsk-cup.ru" data-layout="button_count" data-size="large"><a
                 target="_blank"
                 href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprimorsk-cup.ru%2F&amp;src=sdkpreparse"
-                class="fb-xfbml-parse-ignore">Поделиться</a></div>
+                class="fb-xfbml-parse-ignore text-white">Поделиться</a></div>
     </div>
     <div class="my-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor"
@@ -43,7 +43,8 @@
         </svg>
         <h4>Положение</h4>
         <p class="custom-text-block">
-            <a href="{% static 'reglament_openfoil.pdf' %}" target="_blank">Положение по "OpenFoil"</a></p>
+            <a href="{% static 'reglament_openfoil.pdf' %}" target="_blank">Положение по "OpenFoil"</a>
+        </p>
     </div>
 </section>
 <section class="location">
@@ -57,13 +58,19 @@
         <p>Сорвенования будут проходить недалеко от г. Приморск Ленинградской области.</p>
         <p>188910, Ленинградская область, Выборгский район, г. Приморск, п. Манола, ул. Береговая, 24.</p>
         <p>Race office будет находится на территории <a
-            href="http://bazaadmiral.ru/bazaadm/manola/uslovija-prozhivanija-manola" target="_blank">Базы отдыха
-            "Манола"</a></p>
-        <!-- TODO Добавить карту через js https://developers.google.com/maps/documentation/javascript/adding-a-google-map#javascript -->
+                href="http://bazaadmiral.ru/bazaadm/manola/uslovija-prozhivanija-manola" target="_blank">Базы отдыха
+                "Манола"</a></p>
+        <p class="shadow-lg p-3 mb-5 bg-warning rounded">Телефон для бронирования: +79681838199. При бронировании по паролю
+            “Регата” будет предоставлена скидка.</p>
 
-        <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0"
+        <!-- TODO Добавить карту через js https://developers.google.com/maps/documentation/javascript/adding-a-google-map#javascript 
+          https://habr.com/en/post/324880/-->
+
+        <!-- <div style="width: 100%"><iframe scrolling="no" marginheight="0" marginwidth="0"
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=60.412900,%2028.576887+(Primorsk%20Cup)&amp;t=&amp;z=9&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                width="100%" height="600" frameborder="0"></iframe></div>
+                width="100%" height="600" frameborder="0"></iframe></div> -->
+
+
     </div>
 </section>
 {% endblock %}
