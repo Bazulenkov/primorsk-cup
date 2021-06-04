@@ -15,6 +15,7 @@ services:
     volumes:
       - static_volume:/code/static/
       - media_volume:/code/media/
+      - /etc/letsencrypt/live/primorsk-cup.ru/:/etc/letsencrypt/live/primorsk-cup.ru/
     depends_on:
       - db
     env_file:
@@ -27,8 +28,10 @@ services:
     volumes:
       - static_volume:/code/static/
       - media_volume:/code/media/
+      - /etc/letsencrypt/:/etc/letsencrypt/
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - app
 
