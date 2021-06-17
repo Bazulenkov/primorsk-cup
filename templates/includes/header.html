@@ -23,6 +23,10 @@
                         <span class="badge rounded-pill bg-primary" id="counter">{{ participants_count }}</span>
                     </a>
                 </li>
+                <li class="nav-item col-md-auto">
+                    <a class="nav-link py-1 px-2{% if sponsors %} active" aria-current="true{% endif %}"
+                        href="{% url 'about:sponsors' %}">Спонсоры</a>
+                </li>
             </ul>
 
             <hr class="text-black-50 my-0">

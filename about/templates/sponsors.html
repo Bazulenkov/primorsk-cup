@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Наши спонсоры{% endblock %}
+{% load static %}
+
+{% block content %}
+{% include "includes/header.html" with sponsors=True %}
+<section class="container">
+    
+    <h1>Наши спонсоры</h1>
+    <p>Мы очень рады, что есть люди, и компании, которые за ними стоят!</p>
+    <p>И этим людям и компаниям небезразлично развитие спорта, и в частности виндсерфинга.</p>
+    <p>Поприветствуем наших спонсоров!</p>
+
+    <div class="my-4">
+        <h4 class="mt-2">Диана-спорт</h4>
+        <img class="img-fluid " src="{% static 'sponsors/Diana.png' %}">
+    </div>
+
+    <div class="my-4">
+        <h4>H2O</h4>
+        <img class="img-fluid " src="{% static 'sponsors/H2O.png' %}">
+    </div>
+    <div class="my-4">
+        <h4>VTS</h4>
+        <img class="img-fluid " src="{% static 'sponsor/VTS.png' %}">
+    </div>
+    <div class="my-4">
+        <h4>Инженер-Проект</h4>
+        <img class="img-fluid " src="{% static 'sponsor/ip.png' %}">
+
+    </div>
+</section>
+
+{% endblock %}
